@@ -1,0 +1,12 @@
+.noss{
+    flex-wrap: wrap;
+    margin-top: 20px;
+    width: 87%;
+    margin-left: 12%;
+}
+.noss > .card{
+    background: #000;
+    margin: 10px;
+    width: 29% !important;
+    height: 60vh;
+}
