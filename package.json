@@ -12,8 +12,10 @@
     "axios": "^0.27.2",
     "bootstrap": "^5.2.1",
     "firebase": "^9.9.4",
+    "jquery": "^3.6.1",
     "preact": "^10.10.6",
     "preact-router": "^4.1.0",
+    "react-bootstrap": "^2.5.0",
     "react-router": "^6.3.0"
   },
   "devDependencies": {

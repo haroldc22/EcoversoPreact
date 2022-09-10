@@ -43,6 +43,7 @@
   padding: 10px;
   background: #FFF;
   color: #000 !important;
+  border-radius: 7px;
 }
 .navbar-nav{
   display: flex;
@@ -51,4 +52,12 @@
 }
 #app{
   width: 100%;
+}
+@media screen and (min-width: 600px) {
+  .navbar{
+    background-color: #FFF !important;
+  }
+  .form-nav{
+    display: none !important;
+  }
 }

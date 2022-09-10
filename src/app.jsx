@@ -2,7 +2,7 @@ import { useState } from 'preact/hooks'
 import Banner from './components/Banner';
 import Router from 'preact-router';
 import Registro from './components/Login';
-import Navbar from './components/Navbar';
+import NavBar from './components/Navbar';
 import Information from './components/Information';
 import Park from './components/Park';
 import Nosotros from './components/Nosotros';
@@ -13,7 +13,7 @@ export function App() {
   return (
     <>
     <div className='main'>
-    <Navbar/>
+    <NavBar/>
     <Router>
       <Banner path="/"/>
       <Registro path="/registro" />
