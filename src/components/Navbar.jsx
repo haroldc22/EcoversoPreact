@@ -16,7 +16,6 @@ function NavBar(){
         <Navbar.Collapse id="navbarScroll">
           <Nav
             className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: '100px' }}
             navbarScroll
           >
             <Nav.Link href="/registro">Registro</Nav.Link>
@@ -38,7 +37,7 @@ function NavBar(){
               Parques
             </Nav.Link>
           </Nav>
-          <Form className="d-flex form-nav">
+          <Form className="form-nav" style={{display: "flex"}}>
             <Form.Control
               type="search"
               placeholder="Search"

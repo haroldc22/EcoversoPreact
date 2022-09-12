@@ -20,7 +20,9 @@ function Banner(){
             </div>
         </div>
         <iframe src="https://storymaps.arcgis.com/stories/c0f275e44de4460fbce3a66e9b1e2a37" className="mt-5 mb-5 iframe_mapa" width="100%" height="700px" frameborder="0" allowfullscreen allow="geolocation"></iframe>
-        <footer class="bg-dark">
+        
+    </div>
+    <footer class="bg-dark">
         <div class="credenciales">
             <p class="text-light">
                 <span>© 2022 Ecoverso</span>
@@ -40,8 +42,6 @@ function Banner(){
             </div>
         </div>
     </footer>
-    </div>
-    
     </>
 
     )
