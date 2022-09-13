@@ -1,6 +1,3 @@
-import facebook from "../img/facebook.png"
-import instagram from "../img/instagram.png"
-import github from "../img/github.png"
 import '../styles/banner.css';
 
 function Banner(){
@@ -20,28 +17,7 @@ function Banner(){
             </div>
         </div>
         <iframe src="https://storymaps.arcgis.com/stories/c0f275e44de4460fbce3a66e9b1e2a37" className="mt-5 mb-5 iframe_mapa" width="100%" height="700px" frameborder="0" allowfullscreen allow="geolocation"></iframe>
-        
     </div>
-    <footer class="bg-dark">
-        <div class="credenciales">
-            <p class="text-light">
-                <span>© 2022 Ecoverso</span>
-                <span>Todos los derechos reservados</span>
-            </p>
-            <div class="names d-flex">
-                <a id="nombres" className="card-text">Harold Castaño</a>
-                <a id="nombres" className="card-text">• Mariana Jaramillo</a>
-                <a id="nombres" className="card-text">• Henry Sepulveda</a>
-                <a id="nombres" className="card-text">• Jhojan Espinosa</a>
-                <a id="nombres" className="card-text">• Estefania Muñoz</a>
-            </div>
-            <div class="icons d-flex">
-                <img src={facebook} width={30} height={30}/>
-                <img src={instagram} width={30} height={30}/>
-                <img src={github} width={30} height={30}/>
-            </div>
-        </div>
-    </footer>
     </>
 
     )

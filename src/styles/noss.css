@@ -10,3 +10,13 @@
     width: 29% !important;
     height: 60vh;
 }
+@media screen and (max-width: 408px) {
+    .noss{
+        margin-left: 0 !important;
+        flex-direction: column;
+        width: 95%;
+    }
+    .noss > .card{
+        width: 100% !important;
+    }
+}
