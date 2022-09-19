@@ -76,7 +76,9 @@
     font-size: 12px;
   }
 }
-
+.navbar-toggler{
+  border: 2px solid #0067ef !important;
+}
 @media screen and (min-width: 407px) and (max-width: 490px) {
   .form-nav{
     display: none !important;
@@ -133,8 +135,14 @@
     font-size: 28px;
   }
 }
-@media screen and (max-width: 927px) {
+@media screen and (min-width: 927px) {
   .form-nav{
     display: none !important;
+  }
+  
+}
+@media screen and (min-width: 992px) {
+  #logo{
+    display: none;
   }
 }

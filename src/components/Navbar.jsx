@@ -20,7 +20,11 @@ function NavBar(){
         <Navbar bg="dark" expand="lg">
         <Container fluid>
         <a href="/"><img src={logo} width={80} height={80} className="logo" /></a>
-          <Navbar.Toggle aria-controls="navbarScroll" />
+        <div className='flex'>
+          <Navbar.Toggle aria-controls="navbarScroll"/><Link href={cookies.name != null ? "/perfil" : "/registro"} ><img src={cookies.name != null ? cookies.logo : user}
+              style={{borderRadius: "100%", width: "25%", cursor: "pointer", marginLeft: "30px"}} id="logo"
+              /></Link>
+        </div>
           <Navbar.Collapse id="navbarScroll">
             <Nav
               className="me-auto my-2 my-lg-0"
@@ -46,12 +50,14 @@ function NavBar(){
               </Nav.Link>
             </Nav>
             <div className='logouser' style={{width: "10%", height: "10%"}}>
-              <Link href={cookies.name != null ? "/perfil" : "/registro"} ><img src={cookies.name != null ? cookies.logo : user}
-              style={{borderRadius: "100%", width: "35%", cursor: "pointer"}}
-              /></Link>
             </div>
+            <Link href={cookies.name != null ? "/perfil" : "/registro"} ><img src={cookies.name != null ? cookies.logo : user}
+              style={{borderRadius: "100%", width: "40%", cursor: "pointer"}}
+            /></Link>
           </Navbar.Collapse>
+          
         </Container>
+        
       </Navbar>
     </header>
     )
