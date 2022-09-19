@@ -9,6 +9,7 @@ import Nosotros from './components/Nosotros';
 import facebook from "./img/facebook.png"
 import instagram from "./img/instagram.png"
 import github from "./img/github.png"
+import Perfil from './components/Perfil';
 
 export function App() {
   const [count, setCount] = useState(0)
@@ -23,6 +24,7 @@ export function App() {
       <Information path="/Informacion" />
       <Nosotros path="/nosotros" />
       <Park path="/parques" />
+      <Perfil path="/perfil" />
     </Router>
     </div>
     <footer class="bg-dark">

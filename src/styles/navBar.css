@@ -48,10 +48,19 @@
 .navbar-nav{
   display: flex;
   justify-content: center;
-  width: 85%;
+  width: 100%;
 }
 #app{
   width: 100%;
+}
+.main{
+  min-height: calc(100vh - 149px);
+}
+.perf{
+  background-color: rgba(165, 165, 165, 0.548);
+  width: 70%;
+  margin-left: 15%;
+  margin-top: 20px;
 }
 @media screen and (max-width: 408px) {
   .form-nav{
