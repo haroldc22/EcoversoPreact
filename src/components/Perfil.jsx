@@ -5,22 +5,21 @@ import '../styles/perfil.css'
 import {GrFormView} from 'react-icons/gr'
 import {MdReviews} from 'react-icons/md'
 import {CgGames} from 'react-icons/cg'
+import empty from '../img/empty.png'
 
 function Perfil(){
-    let [data, setData] = useState([])
+    var [data, setData] = useState([])
     const [cookie, setCookies] = useCookies(['name', 'email', 'logo'])
-    useEffect(()=>{
-        getData()
+    useEffect(async()=>{
+        await axios.get("https://eco-backend.vercel.app/api/usuarios").then(res=>{
+            const fill = res.data.filter(e=>{
+                if(e.userName == cookie.name)
+                  return e
+            })
+            setData(fill[0])
+        });
     })
-    async function getData(){
-        const res = await axios.get("https://eco-backend.vercel.app/api/usuarios");
-        const filter = res.data.filter(e=>{
-            if(e.userName == cookie.name){
-                return e
-            }
-        })
-        setData(filter[0])
-    }
+    console.log(data);
     return(
         <div className='perf'>
             <main>
@@ -36,9 +35,7 @@ function Perfil(){
                             <h4>Publicaciones</h4>
                         </div>
                         <div className='column'>
-                            {
-                                <h3 className='text-white text-center'>{data.followers}</h3>
-                            }
+                            <h3 className='text-white text-center'>{data.follows}</h3>
                             <h4>Seguidores</h4>
                         </div>
                         <div className='column'>
@@ -51,9 +48,20 @@ function Perfil(){
                     </div>
                 </section>
                 <section className='p-5 d-flex justify-content-center' style={{background: "rgb(0 72 88)"}}>
-                    <div className='d-flex'><GrFormView /><h5 style={{marginLeft: "10px"}}>publicar</h5></div>
-                    <div className='d-flex'><MdReviews/><h5 style={{marginLeft: "10px"}}>reseñas</h5></div>
-                    <div className="d-flex"><CgGames /><h5 style={{marginLeft: "10px"}}>juegos</h5></div>
+                    <div className='d-flex' style={{cursor: "pointer"}}><GrFormView /><h5 style={{marginLeft: "10px"}}>publicar</h5></div>
+                    <div className='d-flex' style={{cursor: "pointer"}}><MdReviews/><h5 style={{marginLeft: "10px"}}>reseñas</h5></div>
+                    <div className="d-flex" style={{cursor: "pointer"}}><CgGames /><h5 style={{marginLeft: "10px"}}>juegos</h5></div>
+                </section>
+                <section className='d-flex justify-content-center' style={{background: "rgb(0 72 98)", padding: "90px"}}>
+                    {
+                        data.posts == null ? 
+                            <img src={empty} style={{"width": "20%"}} />:
+                            data.posts.map(e=>(
+                                <div>
+                                    <img src={e} />
+                                </div>
+                            ))
+                    }
                 </section>
             </main>
         </div>
