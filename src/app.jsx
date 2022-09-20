@@ -13,7 +13,6 @@ import Perfil from './components/Perfil';
 
 export function App() {
   const [count, setCount] = useState(0)
-
   return (
     <>
     <div className='main'>

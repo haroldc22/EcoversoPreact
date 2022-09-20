@@ -1,0 +1,14 @@
+.column{
+    margin-right: 40px;
+}
+.perf > main{
+    background: #000;
+}
+.perf{
+    width: 100%;
+}
+svg{
+    width: 30px;
+    height: 30px;
+    margin-left: 90px;
+}

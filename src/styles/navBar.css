@@ -56,11 +56,8 @@
 .main{
   min-height: calc(100vh - 149px);
 }
-.perf{
-  background-color: rgba(165, 165, 165, 0.548);
-  width: 70%;
-  margin-left: 15%;
-  margin-top: 20px;
+#logo{
+  width: 100%;
 }
 @media screen and (max-width: 408px) {
   .form-nav{
@@ -75,6 +72,7 @@
   .names > #nombres{
     font-size: 12px;
   }
+  
 }
 .navbar-toggler{
   border: 2px solid #0067ef !important;
@@ -92,6 +90,7 @@
   .names > #nombres{
     font-size: 12px;
   }
+  
 }
 @media screen and (min-width: 491px) and (max-width: 551px) {
   .form-nav{

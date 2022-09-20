@@ -5,7 +5,7 @@ function Banner(){
         <>
         <div class="container-fluid">
         <div class="title" style={{display: "flex", justifyContent: "center"}}>
-            <h2 class="text-light" style={{display: "inline"}}>Bienvenido a Ecoverso</h2>
+            <h2 class="text-light" style={{display: "inline"}}>Bienvenido a Ecoverso.</h2>
         </div>
         <div class="contenido">
             <div class="main">

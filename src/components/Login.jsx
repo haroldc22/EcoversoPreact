@@ -3,6 +3,7 @@ import app from '../base';
 import firebase from '../base';
 import Cookies from 'cookies';
 import { CookiesProvider, useCookies } from 'react-cookie';
+import axios from 'axios';
 
 function Registro(){
   var auth = firebase.auth();
@@ -15,6 +16,11 @@ function Registro(){
       setCookies('name', user.user.displayName);
       setCookies('email', user.user.email)
       setCookies('logo', user.user.photoURL)
+      axios.post("https://eco-backend.vercel.app/api/usuarios",{
+        "userName": user.user.displayName,
+        "email": user.user.email,
+        "logo": user.user.photoURL
+      })
     })
   }
   return(
