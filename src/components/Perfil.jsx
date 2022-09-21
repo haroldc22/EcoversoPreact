@@ -19,7 +19,6 @@ function Perfil(){
             setData(fill[0])
         });
     })
-    console.log(data);
     return(
         <div className='perf'>
             <main>

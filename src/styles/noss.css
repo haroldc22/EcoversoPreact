@@ -10,7 +10,7 @@
     width: 29% !important;
     height: 60vh;
 }
-@media screen and (max-width: 408px) {
+@media screen and (max-width: 509px) {
     .noss{
         margin-left: 0 !important;
         flex-direction: column;
@@ -18,5 +18,16 @@
     }
     .noss > .card{
         width: 100% !important;
+    }
+}
+@media screen and (min-width: 510px) and (max-width: 650px) {
+    .noss > .card{
+        margin: 0 10% 20px !important;
+        width: 85% !important;
+    }
+    .noss{
+        margin-left: 0 !important;
+        flex-direction: column;
+        width: 100%;
     }
 }

@@ -52,7 +52,7 @@ function NavBar(){
             <div className='logouser' style={{width: "10%", height: "10%"}}>
             </div>
             <Link href={cookies.name != null ? "/perfil" : "/registro"} style={{width: "5%", marginRight: "15px"}} ><img src={cookies.name != null ? cookies.logo : user}
-              style={{borderRadius: "100%", width: "100%", cursor: "pointer"}}
+              style={{borderRadius: "100%", width: "100%", cursor: "pointer"}} id="logomain"
             /></Link>
           </Navbar.Collapse>
           
