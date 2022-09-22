@@ -8,6 +8,7 @@ import {useState} from 'react'
 import {Credentials, App} from 'realm-web'
 import logo from '../img/usuario-perfil.png'
 import google from '../img/google.png'
+import { useAuth0 } from "@auth0/auth0-react";
 
 function Registro(){
   var auth = firebase.auth();
@@ -17,21 +18,21 @@ function Registro(){
   const [password, setPassword] = useState('')
   const [name, setName] = useState('')
   const [status, setStatus] = useState(false)
+  const { loginWithRedirect, user, isAuthenticated } = useAuth0();
 
   function Login(e){
     e.preventDefault()
-    auth.signInWithPopup(provider).catch(alert).then((user)=>{
-      setCookies('name', user.user.displayName);
-      setCookies('email', user.user.email)
-      setCookies('logo', user.user.photoURL)
+    loginWithRedirect()
+    if(isAuthenticated)
+      setCookies('name', user.name);
+      setCookies('email', user.email);
+      setCookies('logo', user.picture);
       axios.post("https://eco-backend.vercel.app/api/usuarios",{
-        "userName": user.user.displayName,
-        "email": user.user.email,
-        "logo": user.user.photoURL
+        "userName": user.name,
+        "email": user.email,
+        "logo": user.picture
       })
-    })
   }
-
   function Email(e){
     e.preventDefault()
     if(!status){
