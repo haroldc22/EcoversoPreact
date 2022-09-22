@@ -51,13 +51,13 @@ function Perfil(){
                     <div className='d-flex' style={{cursor: "pointer"}}><MdReviews/><h5 style={{marginLeft: "10px"}}>reseñas</h5></div>
                     <div className="d-flex" style={{cursor: "pointer"}}><CgGames /><h5 style={{marginLeft: "10px"}}>juegos</h5></div>
                 </section>
-                <section className='d-flex justify-content-center' style={{background: "rgb(0 72 98)", padding: "90px"}}>
+                <section className={data.posts == null ? 'd-flex justify-content-center' : 'd-grid'} style={{background: "rgb(0 72 98)", padding: "90px", gridTemplateColumns: "repeat(3, 1fr)"}}>
                     {
                         data.posts == null ? 
                             <img src={empty} style={{"width": "20%"}} />:
                             data.posts.map(e=>(
                                 <div>
-                                    <img src={e} />
+                                    <img style={{width: "80%"}} src={e} />
                                 </div>
                             ))
                     }
