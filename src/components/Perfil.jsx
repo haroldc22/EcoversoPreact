@@ -26,6 +26,7 @@ function Perfil(){
                     <img src={cookie.logo} style={{width: "16%", height: "16%", borderRadius: "100%", marginRight: "6%"}} />
                     <div className='info m-5'>
                     <h2 className='text-info'>{cookie.name}</h2>
+                    <button className='btn'>Cerrar sesión</button>
                     <div className='items d-flex mt-5'>
                         <div className='column'>
                             {
@@ -66,4 +67,7 @@ function Perfil(){
         </div>
     )
 }
+
+
+  
 export default Perfil;
