@@ -10,10 +10,11 @@
   },
   "dependencies": {
     "@auth0/auth0-react": "^1.11.0",
+    "@firebase/auth": "^0.20.7",
     "axios": "^0.27.2",
     "bootstrap": "^5.2.1",
     "cookies": "^0.8.0",
-    "firebase": "^8.3.1",
+    "firebase": "^8.10.1",
     "firebase-auth": "^0.1.2",
     "jquery": "^3.6.1",
     "preact": "^10.10.6",

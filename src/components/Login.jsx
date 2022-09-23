@@ -13,25 +13,32 @@ import { useAuth0 } from "@auth0/auth0-react";
 function Registro(){
   var auth = firebase.auth();
   var provider = new firebase.auth.GoogleAuthProvider();
+  const tel = new firebase.auth.PhoneAuthProvider();
   const [cookies, setCookies] = useCookies(['name', 'email', 'logo'])
-  const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [name, setName] = useState('')
   const [status, setStatus] = useState(false)
-  const { loginWithRedirect, user, isAuthenticated } = useAuth0();
-
+  const { loginWithRedirect } = useAuth0();
+  
   function Login(e){
     e.preventDefault()
+    
+    auth.signInWithPopup(provider).then((user)=>{
+      console.log(user);
+      setCookies('name', user.user.displayName);
+        setCookies('email', user.user.email)
+        setCookies('logo', user.user.photoURL)
+        axios.post("https://eco-backend.vercel.app/api/usuarios",{
+          "userName": user.user.displayName,
+          "email": user.user.email,
+          "logo": user.user.photoURL
+        })
+    })
+  }
+  function Tel(e){
+    e.preventDefault()
+    
     loginWithRedirect()
-    if(isAuthenticated)
-      setCookies('name', user.name);
-      setCookies('email', user.email);
-      setCookies('logo', user.picture);
-      axios.post("https://eco-backend.vercel.app/api/usuarios",{
-        "userName": user.name,
-        "email": user.email,
-        "logo": user.picture
-      })
   }
   function Email(e){
     e.preventDefault()
@@ -88,12 +95,6 @@ function Registro(){
               <input type="text" class="form-control" id="username" placeholder="user123" onChange={(e)=>setName(e.target.value)}/>
             </div>
         </div>
-          <div class="form-group col mb-4">
-            <label for="staticEmail" class="col-sm-2 col-form-label text-light"><b>Email</b></label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="staticEmail" placeholder="email@example.com" onChange={(e)=>setEmail(e.target.value)}/>
-            </div>
-          </div>
           <div class="form-group col">
             <label for="inputPassword" class="col-sm-2 col-form-label text-light"><b>Password</b></label>
             <div class="col-sm-10">
@@ -105,6 +106,7 @@ function Registro(){
               <a href='#' onClick={(e)=>setStatus(!status)}>{!status ? "aun no tienes cuenta?" : "inicia sesion"}</a>
           </div>
           <button onClick={Login} style={{width: "80%", marginLeft: "10%", borderRadius: "8px"}}><img src={google} style={{width: "7%"}}/></button>
+          <button onClick={Tel} style={{width: "80%", marginLeft: "10%", borderRadius: "8px"}}><img src={google} style={{width: "7%"}}/></button>
           <div className='creden mt-2 text-center'>
           <span className='text-sencodary '>©Ecoverso 2022</span>
           </div>
