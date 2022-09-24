@@ -1,6 +1,6 @@
 import '../styles/Login.css';
 import app from '../base';
-import firebase from '../base';
+import firebase from 'firebase';
 import Cookies from 'cookies';
 import { CookiesProvider, useCookies } from 'react-cookie';
 import axios from 'axios';
@@ -9,12 +9,13 @@ import {Credentials, App} from 'realm-web'
 import logo from '../img/usuario-perfil.png'
 import google from '../img/google.png'
 import { useAuth0 } from "@auth0/auth0-react";
+import facebooklog from '../img/facebook.png'
 
 function Registro(){
   var auth = firebase.auth();
   var provider = new firebase.auth.GoogleAuthProvider();
-  const tel = new firebase.auth.PhoneAuthProvider();
-  const [cookies, setCookies] = useCookies(['name', 'email', 'logo'])
+  const facebook = new firebase.auth.FacebookAuthProvider();
+  const [cookies, setCookies] = useCookies(['name', 'password', 'logo', "email"]);
   const [password, setPassword] = useState('')
   const [name, setName] = useState('')
   const [status, setStatus] = useState(false)
@@ -26,64 +27,38 @@ function Registro(){
     auth.signInWithPopup(provider).then((user)=>{
       console.log(user);
       setCookies('name', user.user.displayName);
-        setCookies('email', user.user.email)
-        setCookies('logo', user.user.photoURL)
-        axios.post("https://eco-backend.vercel.app/api/usuarios",{
-          "userName": user.user.displayName,
-          "email": user.user.email,
-          "logo": user.user.photoURL
-        })
+      setCookies('email', user.user.email)
+      setCookies('logo', user.user.photoURL)
+      axios.post("https://eco-backend.vercel.app/api/usuarios",{
+        "userName": user.user.displayName,
+        "email": user.user.email,
+        "logo": user.user.photoURL
+      })
     })
   }
-  function Tel(e){
+  async function Email(e){
     e.preventDefault()
-    
-    loginWithRedirect()
-  }
-  function Email(e){
-    e.preventDefault()
-    if(!status){
-      auth.signInWithEmailAndPassword(
-        email,
-        password
-      ).then(user=>{
-        console.log(user);
+    if(status){
         setCookies('name', name);
-        setCookies('email', user.user.email)
+        setCookies('password', password)
         setCookies('logo', logo)
         axios.post("https://eco-backend.vercel.app/api/usuarios",{
           "userName": name,
-          "email": user.user.email,
-          "logo": logo
+          "logo": logo,
+          "password": password
         })
-        setEmail('')
-        setPassword('')
-      }).catch(err=>{
-        console.log(err);
-        
-      })
-      
     }
     else{
-      auth.createUserWithEmailAndPassword(
-        email,
-        password
-      ).then(user=>{
-        console.log(user);
+      alert(name)
+      const res = (await axios.get('https://eco-backend.vercel.app/api/usuarios')).data;
+      res.map(e=>{
+        console.log(e);
+        if(e.name == name && e.password == password){
         setCookies('name', name);
-        setCookies('email', user.user.email)
+        setCookies('password', password)
         setCookies('logo', logo)
-        axios.post("https://eco-backend.vercel.app/api/usuarios",{
-          "userName": name,
-          "email": user.user.email,
-          "logo": logo
-        })
-        setEmail('')
-        setPassword('')
-      }).catch(err=>{
-        console.log(err);
+        }
       })
-      
     }
   }
   return(
@@ -106,7 +81,6 @@ function Registro(){
               <a href='#' onClick={(e)=>setStatus(!status)}>{!status ? "aun no tienes cuenta?" : "inicia sesion"}</a>
           </div>
           <button onClick={Login} style={{width: "80%", marginLeft: "10%", borderRadius: "8px"}}><img src={google} style={{width: "7%"}}/></button>
-          <button onClick={Tel} style={{width: "80%", marginLeft: "10%", borderRadius: "8px"}}><img src={google} style={{width: "7%"}}/></button>
           <div className='creden mt-2 text-center'>
           <span className='text-sencodary '>©Ecoverso 2022</span>
           </div>
