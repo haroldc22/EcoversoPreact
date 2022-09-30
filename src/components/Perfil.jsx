@@ -6,10 +6,14 @@ import {GrFormView} from 'react-icons/gr'
 import {MdReviews} from 'react-icons/md'
 import {CgGames} from 'react-icons/cg'
 import empty from '../img/empty.png'
+import firebase from '../base'
+
 
 function Perfil(){
     var [data, setData] = useState([])
     const [cookie, setCookies] = useCookies(['name', 'email', 'logo'])
+    var auth = firebase.auth();
+
     useEffect(async()=>{
         await axios.get("https://eco-backend.vercel.app/api/usuarios").then(res=>{
             const fill = res.data.filter(e=>{
@@ -26,7 +30,11 @@ function Perfil(){
                     <img src={cookie.logo} style={{width: "16%", height: "16%", borderRadius: "100%", marginRight: "6%"}} />
                     <div className='info m-5'>
                     <h2 className='text-info'>{cookie.name}</h2>
-                    <button className='btn'>Cerrar sesión</button>
+                    <button className='btn' onClick={auth.signOut(auth).then(() => {
+                        // Sign-out successful.
+                        }).catch((error) => {
+                        // An error happened.
+                        })}>Cerrar sesión</button>
                     <div className='items d-flex mt-5'>
                         <div className='column'>
                             {

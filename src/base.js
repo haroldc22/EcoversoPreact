@@ -12,7 +12,7 @@ const firebaseConfig = {
   storageBucket: "ecoverso-ant.appspot.com",
   messagingSenderId: "851416216625",
   appId: "1:851416216625:web:62d3f0b8e617b6e5cb9110"
-};
+}
 
 // Initialize Firebase
 export const app = firebase.initializeApp(firebaseConfig);

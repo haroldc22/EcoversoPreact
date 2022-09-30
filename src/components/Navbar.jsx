@@ -1,4 +1,4 @@
-import logo from '../img/logo.jfif'
+import logo from '../img/logo nuevo flor.png'
 import '../styles/navBar.css';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
@@ -19,7 +19,7 @@ function NavBar(){
       <header>
         <Navbar bg="dark" expand="lg">
         <Container fluid>
-        <a href="/"><img src={logo} width={80} height={80} className="logo" /></a>
+        <a href="/"><img src={logo} className="logo" /></a>
         <div className='d-flex' style={{justifyContent: "end"}}>
           <Navbar.Toggle aria-controls="navbarScroll"/><Link style={{marginLeft: "15px", width: "8vh"}} href={cookies.name != null ? "/perfil" : "/registro"} ><img src={cookies.name != null ? cookies.logo : user}
               style={{borderRadius: "100%", cursor: "pointer"}} id="logo"
