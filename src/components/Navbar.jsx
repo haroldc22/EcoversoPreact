@@ -1,4 +1,4 @@
-import logo from '../img/logo.jfif'
+import {logo} from 
 import '../styles/navBar.css';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
