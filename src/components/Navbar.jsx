@@ -1,4 +1,4 @@
-import logo from '../img/logo nuevo flor.png'
+import logo from '../img/logoEco.png'
 import '../styles/navBar.css';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';

@@ -27,8 +27,8 @@
   transition-property: all;
 }
 .logo{
-  width: 300px;
-  height: 100px;
+  width: 120px;
+  height: 80px;
 }
 .logo:hover{
   transform: scale(1.1);

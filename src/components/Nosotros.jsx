@@ -58,8 +58,10 @@ function Nosotros(){
                             <p className="card-text text-primary text-center">{e.roll}</p>
                         </div>
                     </div>
+                    </div>
                 ))
             }
+            
             
         </div>
     )
