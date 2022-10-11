@@ -1,5 +1,7 @@
 .navbar{
   width: 100%;
+  background-color: #000;
+  height: 16vh;
 }
 .nav{
   text-align: center;
@@ -27,8 +29,9 @@
   transition-property: all;
 }
 .logo{
-  width: 120px;
-  height: 80px;
+  width: 100px !important;
+  height: 100px !important;
+  border-radius: 100% !important;
 }
 .logo:hover{
   transform: scale(1.1);

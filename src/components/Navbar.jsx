@@ -1,4 +1,4 @@
-import logo from '../img/logoEco.png'
+import logo from '../img/eco2.png'
 import '../styles/navBar.css';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
@@ -17,7 +17,7 @@ function NavBar(){
 
     return(
       <header>
-        <Navbar bg="dark" expand="lg">
+        <Navbar expand="lg">
         <Container fluid>
         <a href="/"><img src={logo} className="logo" /></a>
         <div className='d-flex' style={{justifyContent: "end"}}>
