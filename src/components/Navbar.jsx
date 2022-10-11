@@ -1,4 +1,4 @@
-import {logo} from 
+import logo from '../img/stars.png';
 import '../styles/navBar.css';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
@@ -30,18 +30,8 @@ function NavBar(){
               className="me-auto my-2 my-lg-0"
               navbarScroll
             >
+              {/* textos menu */}
               <Nav.Link href="/registro">Registro</Nav.Link>
-              <Nav.Link href="/Informacion">Informacion</Nav.Link>
-              <NavDropdown title="Link" id="navbarScrollingDropdown">
-                <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action4">
-                  Another action
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action5">
-                  Something else here
-                </NavDropdown.Item>
-              </NavDropdown>
               <Nav.Link href="/nosotros">
                 Nosotros
               </Nav.Link>
@@ -49,15 +39,17 @@ function NavBar(){
                 Parques
               </Nav.Link>
             </Nav>
+            {/* FIN textos menu */}
+
+            {/* iconos del usuario menu */}
             <div className='logouser' style={{width: "10%", height: "10%"}}>
             </div>
             <Link href={cookies.name != null ? "/perfil" : "/registro"} style={{width: "5%", marginRight: "15px"}} ><img src={cookies.name != null ? cookies.logo : user}
               style={{borderRadius: "100%", width: "100%", cursor: "pointer"}} id="logomain"
             /></Link>
+            {/* FIN iconos del usuario menu */}
           </Navbar.Collapse>
-          
         </Container>
-        
       </Navbar>
     </header>
     )

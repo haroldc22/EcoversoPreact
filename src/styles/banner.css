@@ -1,35 +1,39 @@
+/* Estilos sesión contenido de la pagina */
 body{
-    background-image: url(../img/fondo_estrellas_calidad.png) !important;
+    min-height: 100vh;
+    background: linear-gradient(#050c09,#41a098) !important;
     width: 100%;
     margin: 0;
 }
+
 form{
 position: absolute;
 left: 79%;
 }
+
+/* titulo Ecoverso */
 .title{
-margin-top: 100px;
-font-family: fantasy;
+    margin-top: 100px;
+    font-family: fantasy;
 }
 .title > h2{
-font-size: 80px;
-text-shadow: 20px 10px 10px  #000;
+    font-size: 80px;
+    text-shadow: 20px 10px 10px  #000;
+    text-align: center;
 }
-.title > h2:hover{
-transform: scale(1.1);
-}
+/*FIN titulo Ecoverso */
+
+/* sección texto informativo, imagen avatar, carrusel de información */
 .contenido > .main{
-width: 94%;
-margin-left: 3%;
-background-color: #ffffff;
+background-color:#122424;
 backdrop-filter: blur(10px);
 padding: 16px;
 border-radius: 5px;
+color: #a8ffe2;
 }
 .contenido{
 width: 100%;
 height: 100%;
-margin-top: 10%;
 }
 .main > .card-text{
 font-size: 40px;
@@ -37,8 +41,11 @@ font-family: fantasy;
 text-align: center;
 }
 .main > p{
-font-family: cursive !important;
+    font-family: cursive !important;
 }
+/* FIN sección texto informativo, imagen avatar, carrusel de información */
+
+/* pie de pagina */
 footer{
 padding: 8px;
 margin-top: 20px;
@@ -70,21 +77,41 @@ margin-left: 20px;
 #nombres{
 color: rgb(255, 255, 255);
 }
-.main > h2{
-color: rgb(17, 87, 0);
-text-shadow: 8px 10px 10px rgb(109, 109, 109);
+/* Fin pie de pagina */
+
+/* imagen de fondo introduccion */
+section img{
+    position: static;
+    width: 100%;
+    height: 80vh;
+}
+/* FIN imagen de fondo introduccion */
+
+/* boton tutorial */
+#btn{
+    text-decoration: none;
+    width: 200px;
+    padding: 8px 30px;
+    border-radius: 40px;
+    background: #fff;
+    color: #2b1055;
+    font-size: 1.5em;
 }
 
-.iframe_mapa{
-padding-top: 100px;
-padding-left: 90px;
-width: 100%;
-height: 700px;
-border-radius: 12px;
+#btn:hover{
+    background: rgb(121, 215, 166);
+    color: #ffffff;
+}
+/* FIN boton tutorial */
+
+/* seccion tarjetas juegos y encuestas */
+.tarjetas{
+    display: inline-flex;
 }
 
-.btn-outline-success{
-background-color: rgb(93, 255, 201);
-color: #000;
-border-radius: 18%;
+.tarjetas>section>img{
+    height: 300px;
+    margin-left:70px;
+    padding: 20px;
 }
+/*FIN seccion tarjetas juegos y encuestas */

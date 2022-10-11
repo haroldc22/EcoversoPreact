@@ -1,5 +1,9 @@
+/* Estilos sesión menú  */
+
+/* barra menu */
 .navbar{
   width: 100%;
+  height: 85px;
 }
 .nav{
   text-align: center;
@@ -9,23 +13,9 @@
   display: flex;
   justify-content: center;
 }
-.nav > li{
-  position: relative;
-  bottom: 15px;
-}
-.nav > li > a{
-  color: #ffffff;
-  padding-top: 0px;
-}
-.navbar-nav > li > a:hover{
-  padding: 5px;
-  background-color: #ffffff;
-  border-radius: 8px;
-  color: #000;
-  box-shadow: 0 12px 16px black;
-  transition: 0.7s;
-  transition-property: all;
-}
+/*FIN barra menu */
+
+/* Logo Ecoverso menu */
 .logo{
   width: 80px;
   height: 80px;
@@ -35,30 +25,33 @@
   transform: scale(1.1);
 
 }
+/*FIN logo Ecoverso menu */
+
+/* Textos menu */
 .nav-link{
   color: #ffffff !important;
   margin: 5px;
+  border-radius: 10px;
 }
 .nav-link:hover{
-  padding: 10px;
   background: #FFF;
   color: #000 !important;
-  border-radius: 7px;
 }
+/* FIN Textos menu */
+
+/* posicion textos menu */
 .navbar-nav{
   display: flex;
   justify-content: center;
   width: 100%;
 }
-#app{
-  width: 100%;
-}
+
 .main{
   min-height: calc(100vh - 149px);
 }
-#logo{
-  width: 100%;
-}
+
+/*responsive desing para dispositivos */
+/* Entre 0px y 400px */
 @media screen and (max-width: 408px) {
   .form-nav{
     display: none !important;

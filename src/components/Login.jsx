@@ -78,7 +78,7 @@ function Registro(){
           </div>
           <div className="d-flex m-4 btns">
               <button class="btn btn-dark" onClick={Email} id="btnlog" style={{margin: "0 7% 0 8%"}}>{!status ? "Iniciar sesion" : "Registrar"}</button>
-              <a href='#' onClick={(e)=>setStatus(!status)}>{!status ? "aun no tienes cuenta?" : "inicia sesion"}</a>
+              <a href='#' onClick={(e)=>setStatus(!status)}>{!status ? "Aún no tienes cuenta?" : "inicia sesion"}</a>
           </div>
           <button onClick={Login} style={{width: "80%", marginLeft: "10%", borderRadius: "8px"}}><img src={google} style={{width: "7%"}}/></button>
           <div className='creden mt-2 text-center'>
