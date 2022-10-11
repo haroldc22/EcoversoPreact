@@ -1,4 +1,4 @@
-import logo from '../img/stars.png';
+import logo from '../img/eco2.png';
 import '../styles/navBar.css';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
@@ -7,7 +7,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { CookiesProvider, useCookies } from 'react-cookie';
-import user from '../img/usuario-perfil.png'
+import user from '../img/usuario.png'
 import { NavLink } from 'react-bootstrap';
 import { Link } from 'preact-router';
 
@@ -17,9 +17,9 @@ function NavBar(){
 
     return(
       <header>
-        <Navbar bg="dark" expand="lg">
+        <Navbar expand="lg">
         <Container fluid>
-        <a href="/"><img src={logo} width={80} height={80} className="logo" /></a>
+        <a href="/"><img src={logo} className="logo" /></a>
         <div className='d-flex' style={{justifyContent: "end"}}>
           <Navbar.Toggle aria-controls="navbarScroll"/><Link style={{marginLeft: "15px", width: "8vh"}} href={cookies.name != null ? "/perfil" : "/registro"} ><img src={cookies.name != null ? cookies.logo : user}
               style={{borderRadius: "100%", cursor: "pointer"}} id="logo"
@@ -45,7 +45,7 @@ function NavBar(){
             <div className='logouser' style={{width: "10%", height: "10%"}}>
             </div>
             <Link href={cookies.name != null ? "/perfil" : "/registro"} style={{width: "5%", marginRight: "15px"}} ><img src={cookies.name != null ? cookies.logo : user}
-              style={{borderRadius: "100%", width: "100%", cursor: "pointer"}} id="logomain"
+              style={{width: "80%", cursor: "pointer"}} id="logomain"
             /></Link>
             {/* FIN iconos del usuario menu */}
           </Navbar.Collapse>

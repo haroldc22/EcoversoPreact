@@ -34,12 +34,3 @@ h1{
     border-radius: 8px;
     color: #000;
 }
-.logo{
-    width: 100px;
-    height: 100px;
-    border-radius: 100%;
-}
-.logo:hover{
-    transform: scale(1.1);
-
-}

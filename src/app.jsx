@@ -26,7 +26,7 @@ export function App() {
       <Perfil path="/perfil" />
     </Router>
     </div>
-    <footer class="bg-dark">
+    <footer className="bg-dark">
         <div class="credenciales">
             <p class="text-light">
                 <span className="ml-2">© 2022 Ecoverso </span>

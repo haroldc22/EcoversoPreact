@@ -6,7 +6,7 @@ import { CookiesProvider, useCookies } from 'react-cookie';
 import axios from 'axios';
 import {useState} from 'react'
 import {Credentials, App} from 'realm-web'
-import logo from '../img/usuario-perfil.png'
+import logo from '../img/usuario.png'
 import google from '../img/google.png'
 import { useAuth0 } from "@auth0/auth0-react";
 import facebooklog from '../img/facebook.png'
