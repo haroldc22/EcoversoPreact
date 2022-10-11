@@ -30,7 +30,7 @@ function NavBar(){
               className="me-auto my-2 my-lg-0"
               navbarScroll
             >
-              <Nav.Link href="/registro">Registro</Nav.Link>
+              <Nav.Link href="/registro">Login</Nav.Link>
               <Nav.Link href="/Informacion">Informacion</Nav.Link>
               <NavDropdown title="Link" id="navbarScrollingDropdown">
                 <NavDropdown.Item href="#action3">Action</NavDropdown.Item>

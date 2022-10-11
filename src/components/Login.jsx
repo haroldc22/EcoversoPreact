@@ -61,6 +61,31 @@ function Registro(){
       })
     }
   }
+  async function Facebook(e){
+    e.preventDefault()
+    auth.signInWithPopup(facebook)
+    .then((result) => {
+      // The signed-in user info.
+      const user = result.user;
+
+      // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+      const credential = FacebookAuthProvider.credentialFromResult(result);
+      const accessToken = credential.accessToken;
+
+      // ...
+    })
+    .catch((error) => {
+      // Handle Errors here.
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // The email of the user's account used.
+      const email = error.customData.email;
+      // The AuthCredential type that was used.
+      const credential = FacebookAuthProvider.credentialFromError(error);
+
+      // ...
+    });
+  }
   return(
       <div class="register d-flex justify-content-center">
       <form class="form-reg">
@@ -81,7 +106,8 @@ function Registro(){
               <a href='#' onClick={(e)=>setStatus(!status)}>{!status ? "aun no tienes cuenta?" : "inicia sesion"}</a>
           </div>
           <button onClick={Login} style={{width: "80%", marginLeft: "10%", borderRadius: "8px"}}><img src={google} style={{width: "7%"}}/></button>
-          <div className='creden mt-2 text-center'>
+          <button onClick={Facebook} style={{marginTop: "10px", width: "80%", marginLeft: "10%", borderRadius: "8px"}}><img src={facebooklog} style={{width: "7%"}}/></button>
+          <div className='creden mt-4 text-center'>
           <span className='text-sencodary '>©Ecoverso 2022</span>
           </div>
       </form>

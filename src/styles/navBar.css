@@ -29,8 +29,8 @@
   transition-property: all;
 }
 .logo{
-  width: 100px !important;
-  height: 100px !important;
+  width: 90px !important;
+  height: 90px !important;
   border-radius: 100% !important;
 }
 .logo:hover{
